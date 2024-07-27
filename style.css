@@ -263,3 +263,9 @@ footer h3{
    font-family: "Roboto", sans-serif;
 }
 
+footer input{
+   height: 2vh;
+   width: 10vh;
+   background-color: #DEB959;
+}
+
