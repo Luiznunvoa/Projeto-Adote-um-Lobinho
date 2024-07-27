@@ -212,5 +212,54 @@ main {
    color: #DEB959;
    font-family: "Darker Grotesque", sans-serif;
 }
+/*Gradientzinho*/
+
+.gradient {
+   background: rgb(222,185,89);
+   background: linear-gradient(90deg, rgba(222,185,89,1) 0%, rgba(44,86,128,1) 100%);
+   border-bottom: solid;
+   border-color: black;
+   border-width: 1px;
+   width: 100%;
+   height: 0.6vh;
+}
 
 /*Estilizaçao do rodapé*/
+
+footer {
+   background-color: #333333;
+   height: 27vh;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+footer iframe{
+   height: 17vh;
+   width: 25vh;
+}
+
+footer section{
+   height: 100%;
+   width: 25%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: left;
+}
+
+footer img {
+   height: 20vh;
+   width: 20vh;
+}
+
+footer h3{
+   color: white;
+   font-size: 1.5vh;
+   font-family: "Roboto", sans-serif;
+}
+
