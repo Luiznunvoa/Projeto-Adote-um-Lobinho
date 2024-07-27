@@ -13,25 +13,30 @@ body {
    margin: 0;
    position: absolute;
    height: 100%;
+   max-width: 2160px;
    width: 100%;
+   max-width: 3840px;
    display: flex;
    flex-direction: column;
    flex-wrap: nowrap;
    align-items: center;
+   left: 50%;
+   top: 0;
+   transform: translate(-50%,0%);
+   font-family:"Darker Grotesque", sans-serif;
 }
 
 /*Estilizaçao do cabeçalho*/
 
 header {
    position: relative;
-   height: 13.6%;
+   height: 15.1%;
    width: 100%;
    display: inline-flex;
    justify-content: space-evenly;
    align-items: center;
    background-color: #85CDF5;
    font-size: 2vh;
-   font-family:"Darker Grotesque", sans-serif;
 }
 
 header img {
@@ -44,4 +49,38 @@ header a {
    text-decoration: none;
    font-size: 2.5vh;
    font-weight: bolder;
+}
+
+/*Estilizaçao da <main>*/
+
+main {
+   max-height: 2900px;
+   width: 100%;
+   background-color: #333333;
+
+}
+
+/*Estilizaçao da parte superior do <main>(onde tem a imagem do lobo)*/
+
+.top {
+   background-image: url("assets/lobo-fundo.png");
+   height: 50vh;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+}
+
+.top h1 {
+   color: white;
+   font-size: 10vh;
+   margin-bottom: -0.5%;
+}
+
+.top h3 {
+   color: white;
+   font-size: 3vh;
+   font-weight:200;
 }
