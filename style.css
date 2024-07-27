@@ -11,22 +11,9 @@
 
 body {
    margin: 0;
-   width: 100%;
+   position: absolute;
    height: 100%;
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   
-}
-
-/*Estilização do <main>*/
-
-main {
-   position: relative;
-   height: 100%;
-   max-height: 2160px;
    width: 100%;
-   max-width: 3840px;
    display: flex;
    flex-direction: column;
    flex-wrap: nowrap;
@@ -58,5 +45,3 @@ header a {
    font-size: 2.5vh;
    font-weight: bolder;
 }
-
-
