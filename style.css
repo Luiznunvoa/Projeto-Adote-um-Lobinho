@@ -60,7 +60,6 @@ header a {
 /*Estilizaçao da <main>*/
 
 main {
-   max-height: 2900px;
    width: 100%;
    background-color: #333333;
 
@@ -194,3 +193,24 @@ main {
    height: 15vh;
    width: 15vh;
 }
+
+/*Estilizaçao da parte mais baixa ainda(exemplo de lobo)*/
+
+.low {
+   background-color: white;
+   height: 105vh;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.low h1{
+   font-size: 4vh;
+   font-weight: bolder;
+   color: #DEB959;
+   font-family: "Darker Grotesque", sans-serif;
+}
+
+/*Estilizaçao do rodapé*/
