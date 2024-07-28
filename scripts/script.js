@@ -1,28 +1,51 @@
-fetch("http://localhost:8080/data/lobinhos.json")
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok ' + response.statusText);
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('There has been a problem with your fetch operation:', error);
-  });
+function getRandomNumber(max) {
+   return Math.floor(Math.random() * max);
+ }
+ 
+ function getTwoDifferentRandomNumbers() {
+   let num1 = getRandomNumber(101);
+   let num2 = getRandomNumber(101);
+ 
+   // Garantir que os dois números sejam diferentes
+   while (num1 === num2) {
+     num2 = getRandomNumber(101);
+   }
+ 
+   return [num1, num2];
+ }
+ 
+ const [num1, num2] = getTwoDifferentRandomNumbers();
 
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const port = 3000;
 
-app.use(cors());
+const fetchConfig = {
+   "method": "GET"
+}
 
-app.get('/data/lobinhos.json', (req, res) => {
-  res.sendFile(__dirname + '/data/lobinhos.json');
-});
+fetch("http://localhost:8080/data/lobinhos.json", fetchConfig)
+   .then((resposta)=>{
+       resposta.json()
+           .then((resposta)=>{
+            let lobo1 = resposta[num1].nome;
+            let desc1 = resposta[num1].descricao;
+            let idade1 = resposta[num1].idade;
+            let imagem1 = resposta[num1].imagem;
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+            let lobo2 = resposta[num2].nome;
+            let desc2 = resposta[num2].descricao;
+            let idade2 = resposta[num2].idade;
+
+            console.log(`Lobo 1 nome: ${lobo1}, idade: ${idade1}, descricao: ${desc1}`)
+            console.log(`Lobo 2 nome: ${lobo2}, idade: ${idade2}, descricao: ${desc2}`)
+            document.getElementById("imagem1").src = imagem1;
+            document.getElementById("nome1").innerHTML = lobo1;
+            document.getElementById("idade1").innerHTML = idade1;
+           })
+           .catch((error)=>{
+               console.log("error 2")
+               console.log(error)
+           })
+   })
+   .catch((error)=>{
+       console.log("error 1")
+       console.log(error)
+   })
