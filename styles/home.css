@@ -163,4 +163,9 @@
    font-family: "Darker Grotesque", sans-serif;
 }
 
+.low img {
+   height: 33vh;
+   width: 45vh;
+}
+
 /*Fim da estilizaçao do home.html*/
