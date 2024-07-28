@@ -1,88 +1,36 @@
-/*Inicialização da fonte que eles usaram no exemplo*/
-
-.darker-grotesque {
-   font-family: "Darker Grotesque", sans-serif;
-   font-optical-sizing: auto;
-   font-weight: 200;
-   font-style: normal;
- }
-
- .roboto-thin {
-   font-family: "Roboto", sans-serif;
-   font-weight: 100;
-   font-style: normal;
- }
-
-/*Estilização do Body*/
-
-body {
-   margin: 0;
-   position: absolute;
-   height: 100%;
-   max-width: 2160px;
-   width: 100%;
-   max-width: 3840px;
-   display: flex;
-   flex-direction: column;
-   flex-wrap: nowrap;
-   align-items: center;
-   left: 50%;
-   top: 0;
-   transform: translate(-50%,0%);
-}
-
-/*Estilizaçao do cabeçalho*/
-
-header {
-   position: relative;
-   height: 15.1%;
-   width: 100%;
-   display: inline-flex;
-   justify-content: space-evenly;
-   align-items: center;
-   background-color: #85CDF5;
-   font-size: 2vh;
-   font-family: "Darker Grotesque", sans-serif;
-}
-
-header img {
-   height: 11vh;
-   width: 10vh;
-}
-
-header a {
-   color: #333333;
-   text-decoration: none;
-   font-size: 2.5vh;
-   font-weight: bolder;
-}
-
-/*Estilizaçao da <main>*/
-
-main {
-   width: 100%;
-   background-color: #333333;
-
-}
+/*Estilizaçao do home.html*/
 
 /*Estilizaçao da parte superior do <main>(onde tem a imagem do lobo)*/
 
 .top {
-   background-image: url("assets/lobo-fundo.png");
-   height: 50vh;
+   height: 100%;
    width: 100%;
    display: flex;
    flex-direction: column;
    align-items: center;
    text-align: center;
    justify-content: flex-start;
+   background-color: black;
+   opacity: 45%;
+}
+
+.top-image {
+   background-image: url("../assets/lobo-fundo.png");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   background-position: 50% 70%;
+   height: 70vh;
+   width: 100%;
 }
 
 .top h1 {
+   margin-top: 10%;
    color: white;
    font-size: 11vh;
    font-weight: 700;
    font-family: "Darker Grotesque", sans-serif;
+   opacity: 100%;
 }
 
 .top h2 {
@@ -95,7 +43,7 @@ main {
 
 .top h3 {
    color: white;
-   font-size: 3vh;
+   font-size: 2.5vh;
    font-weight:200;
    font-family: "Roboto", sans-serif;
 }
@@ -103,7 +51,7 @@ main {
 /*Estilizaçao da parte media do <main>(sobre)*/
 
 .mid {
-   height: 35vh;
+   height: 50vh;
    width: 100%;
    background-color: #2C5680;
    display: flex;
@@ -114,7 +62,8 @@ main {
 }
 
 .mid h1{
-   font-size: 4vh;
+   margin-top: 3%;
+   font-size: 5vh;
    font-weight: bolder;
    color: #DEB959;
    font-family: "Darker Grotesque", sans-serif;
@@ -124,6 +73,7 @@ main {
    font-size: 2.5vh;
    color: white;
    font-weight: 100;
+   line-height: 180%;
    margin-top: -0.1%;
    font-family: "Roboto", sans-serif;
 }
@@ -141,7 +91,7 @@ main {
 }
 
 .bot h1{
-   font-size: 4vh;
+   font-size: 5vh;
    font-weight: bolder;
    color: #DEB959;
    font-family: "Darker Grotesque", sans-serif;
@@ -212,54 +162,5 @@ main {
    color: #DEB959;
    font-family: "Darker Grotesque", sans-serif;
 }
-/*Gradientzinho*/
 
-.gradient {
-   background: rgb(222,185,89);
-   background: linear-gradient(90deg, rgba(222,185,89,1) 0%, rgba(44,86,128,1) 100%);
-   border-bottom: solid;
-   border-color: black;
-   border-width: 1px;
-   width: 100%;
-   height: 0.6vh;
-}
-
-/*Estilizaçao do rodapé*/
-
-footer {
-   background-color: #333333;
-   height: 27vh;
-   width: 100%;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: nowrap;
-   align-items: center;
-   justify-content: space-evenly;
-}
-
-footer iframe{
-   height: 17vh;
-   width: 25vh;
-}
-
-footer section{
-   height: 100%;
-   width: 25%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   text-align: left;
-}
-
-footer img {
-   height: 20vh;
-   width: 20vh;
-}
-
-footer h3{
-   color: white;
-   font-size: 1.5vh;
-   font-family: "Roboto", sans-serif;
-}
-
+/*Fim da estilizaçao do home.html*/
