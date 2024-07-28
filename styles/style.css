@@ -89,6 +89,8 @@ footer {
    flex-wrap: nowrap;
    align-items: center;
    justify-content: space-evenly;
+   padding-top: 30px;
+   padding-bottom: 30px;
 }
 
 footer iframe{
@@ -121,5 +123,9 @@ footer input{
    height: 2vh;
    width: 10vh;
    background-color: #DEB959;
+   border: none;
+   width: auto;
+   height: auto;
+   font-family: "Darker Grotesque", sans-serif;
 }
 
