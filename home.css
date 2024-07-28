@@ -1,0 +1,162 @@
+/*Estilizaçao do home.html*/
+
+/*Estilizaçao da parte superior do <main>(onde tem a imagem do lobo)*/
+
+.top {
+   background-image: url("assets/lobo-fundo.png");
+   height: 50vh;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   justify-content: flex-start;
+}
+
+.top h1 {
+   color: white;
+   font-size: 11vh;
+   font-weight: 700;
+   font-family: "Darker Grotesque", sans-serif;
+}
+
+.top h2 {
+   color: white;
+   font-size: 8vh;
+   margin-bottom: -0.5%;
+   margin-top: -7%;
+}
+
+
+.top h3 {
+   color: white;
+   font-size: 3vh;
+   font-weight:200;
+   font-family: "Roboto", sans-serif;
+}
+
+/*Estilizaçao da parte media do <main>(sobre)*/
+
+.mid {
+   height: 35vh;
+   width: 100%;
+   background-color: #2C5680;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   text-align: center;
+}
+
+.mid h1{
+   font-size: 4vh;
+   font-weight: bolder;
+   color: #DEB959;
+   font-family: "Darker Grotesque", sans-serif;
+}
+
+.mid h3 {
+   font-size: 2.5vh;
+   color: white;
+   font-weight: 100;
+   margin-top: -0.1%;
+   font-family: "Roboto", sans-serif;
+}
+
+/*Estilizaçao da parte baixa do <main>(Valores)*/
+
+.bot {
+   height: 62vh;
+   width: 100%;
+   display: flex;
+   background-color: #333333;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+}
+
+.bot h1{
+   font-size: 4vh;
+   font-weight: bolder;
+   color: #DEB959;
+   font-family: "Darker Grotesque", sans-serif;
+}
+
+.bot section{
+   width: 75%;
+   height: 80%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+}
+.values {
+   height: 100%;
+   width: 25%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   align-items: center;
+   text-align: center;
+}
+
+.img {
+   height: 20vh;
+   width: 20vh;
+   border-radius: 50%;
+   overflow: hidden;
+   display: flex;
+   background-color: #FAFAFA;
+   align-items: center;
+   justify-content: center;
+}
+
+.values h1{
+   color: white;
+   font-size: 3vh;
+}
+
+.values h3{
+   margin-top: -0.5%;
+   color: white;
+   font-size: 2vh;
+   font-family: "Roboto", sans-serif;
+}
+
+
+.bot section img {
+   height: 15vh;
+   width: 15vh;
+}
+
+/*Estilizaçao da parte mais baixa ainda(exemplo de lobo)*/
+
+.low {
+   background-color: white;
+   height: 105vh;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.low h1{
+   font-size: 4vh;
+   font-weight: bolder;
+   color: #DEB959;
+   font-family: "Darker Grotesque", sans-serif;
+}
+/*Gradientzinho*/
+
+.gradient {
+   background: rgb(222,185,89);
+   background: linear-gradient(90deg, rgba(222,185,89,1) 0%, rgba(44,86,128,1) 100%);
+   border-bottom: solid;
+   border-color: black;
+   border-width: 1px;
+   width: 100%;
+   height: 0.6vh;
+}
+
+/*Fim da estilizaçao do home.html*/
