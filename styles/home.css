@@ -168,4 +168,46 @@
    width: 45vh;
 }
 
+.profile {
+   height: 50%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+.desc {
+   height: 60%;
+   width: 30%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.desc h1{
+   color: black;
+}
+
+.desc h5{
+   font-size: 1vh;
+   font-family: "Darker Grotesque", sans-serif;
+}
+
+.desc section{
+   margin-top: -10%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   font-size: 1vh;
+   font-family: "Darker Grotesque", sans-serif;
+}
+
+.textbox {
+   width: 80%;
+   height: 50%;
+   font-size: 1.5vh;
+   font-family: "Darker Grotesque", sans-serif;
+}
 /*Fim da estilizaçao do home.html*/
