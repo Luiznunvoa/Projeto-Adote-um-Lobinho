@@ -1,0 +1,84 @@
+/*Estilizaçao do sobre-nos.html*/
+
+/*Estilizaçao da parte superior do <main>(onde tem a imagem do lobo)*/
+
+.top {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   justify-content: flex-start;
+   background-color: black;
+   opacity: 45%;
+}
+
+.top-image {
+   background-image: url("../assets/lobo-fundo.png");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   background-position: 50% 70%;
+   height: 70vh;
+   width: 100%;
+}
+
+.top h1 {
+   margin-top: 10%;
+   color: white;
+   font-size: 11vh;
+   font-weight: 700;
+   font-family: "Darker Grotesque", sans-serif;
+   opacity: 100%;
+}
+
+.top h2 {
+   color: white;
+   font-size: 8vh;
+   margin-bottom: -0.5%;
+   margin-top: -7%;
+}
+
+
+.top h3 {
+   color: white;
+   font-size: 2.5vh;
+   font-weight:200;
+   font-family: "Roboto", sans-serif;
+}
+
+/*Estilização da parte do meio*/
+
+
+.middle {
+   background-color: white;
+   padding: 40px;
+   margin: 0; 
+   border-radius: 0; 
+   box-shadow: none;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.middle-header {
+   text-align: center;
+   font-size: 3.5em;
+   margin-bottom: 20px;
+   font-family: "Darker Grotesque", sans-serif;
+   color: black;
+}
+
+.middle-text {
+   text-align: center; 
+   width: 80%; 
+   max-width: 800px; 
+   padding: 20px;
+   font-family: "Roboto", sans-serif;
+   font-size: 1.2em;
+   color: black;
+}
+
+/*Fim da estilizaçao do sobre-nos.html*/
