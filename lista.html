@@ -20,20 +20,22 @@
                 <input class="searchbutton" type="button" value="+ Lobo" ondblclick="toggleLobos()"  id="toggleLobos"/>
             </div>
             <div class="search">
-                <input class="adotado" type="checkbox" id="other" value="other"/>
+                <input class="adotado" type="checkbox" id="checkbox-adotados"/>
                 <h3>Ver lobinhos adotados</h3> 
             </div>
             
             <section class="profile">
-                <img scr="placeholder.jpg" id="imagem0"/>
+                <img scr="placeholder.jpg" id="imagem0" class="l"/>
                 <div class="desc">
                     <h1 id="nome0">auau</h1>
                     <span>Idade: &#160<p id="idade0"> </p>&#160 anos</span>
                     <div class="textbox" id="desc0"></div>
                 </div>
+                <div class="adotar" id="status0">Adotar</div>
             </section>
 
             <section class="profile">
+                <div class="adotar" id="status1">Adotar</div>
                 <div class="desc">
                     <h1 id="nome1">auau</h1>
                     <span>Idade: &#160<p id="idade1"> </p>&#160 anos</span>
@@ -43,15 +45,17 @@
             </section>
 
             <section class="profile">
-                <img scr="placeholder.jpg" id="imagem2" class="r"/>
+                <img scr="placeholder.jpg" id="imagem2" class="l"/>
                 <div class="desc">
                     <h1 id="nome2">auau</h1>
                     <span>Idade: &#160<p id="idade2"> </p>&#160 anos</span>
                     <div class="textbox" id="desc2"></div>
                 </div>
+                <div class="adotar" id="status2">Adotar</div>
             </section>
 
             <section class="profile">
+                <div class="adotar" id="status3">Adotar</div>
                 <div class="desc">
                     <h1 id="nome3">auau</h1>
                     <span>Idade: &#160<p id="idade3"> </p>&#160 anos</span>
@@ -60,7 +64,11 @@
                 <img scr="placeholder.jpg" id="imagem3" class="r"/>
             </section>
             <div class="changepage">
-                <button id="next"></button>
+                <p> << </p>
+                <button id="back" class="backbutton">0</button>
+                <p class="actual" id="actual">1</p>
+                <button id="next" class="nextbutton">2</button>
+                <p> >> </p>
             </div>
         </section>
         <div class="gradient"></div>
