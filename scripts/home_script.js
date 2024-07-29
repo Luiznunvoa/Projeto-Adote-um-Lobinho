@@ -41,6 +41,7 @@ fetch("http://localhost:8080/data/lobinhos.json", fetchConfig)
             document.getElementById("nome1").innerHTML = lobo1;
             document.getElementById("idade1").innerHTML = idade1;
             document.getElementById("desc1").innerHTML = desc1;
+            
             document.getElementById("imagem2").src = imagem2;
             document.getElementById("nome2").innerHTML = lobo2;
             document.getElementById("idade2").innerHTML = idade2;
