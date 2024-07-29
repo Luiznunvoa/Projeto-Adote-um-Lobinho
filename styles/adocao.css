@@ -7,6 +7,9 @@ main {
     border: 0;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
  }
 
  /* Textos */
@@ -14,7 +17,7 @@ main {
  h1 {
     font-family: "Darker Grotesque", sans-serif;
     font-size: 60px;
-    margin-top: -24px;
+    margin-top: -4px;
  }
  h6 {
     font-family: "Darker Grotesque", sans-serif;
@@ -30,7 +33,7 @@ p {
 
  /* Dados */
 
- section {
+ .section {
     width: 960px;
     margin: auto;
  }
@@ -47,6 +50,7 @@ p {
  .titulos {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
  }
 .dados {
     display: flex;
@@ -59,7 +63,10 @@ p {
 input {
     border: none;
     border-bottom: solid 1px #333333;
-    height: 10px;
+    height: 50px;
+    font-size: 30px;
+    font-family: "Darker Grotesque", sans-serif;
+    font-weight: 700;
 }
 .input-nome {
     width: 868px;
@@ -69,4 +76,22 @@ input {
 }
 .input-email {
     width: 960px;
+}
+.adotar {
+    width: 209px;
+    height: 60px;
+    background-color: #2c5680;
+    color: #FFFFFF;
+    font-family: "Darker Grotesque", sans-serif;
+    font-size: 36px;
+    border: #333333 solid 1px;
+    margin: 50px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+.adotar:hover {
+    background-color: #5e83a8;
+    border: #FFFFFF 1px solid;
+    transition: all ease .2s;
+    translate: -2px -2px;
 }
