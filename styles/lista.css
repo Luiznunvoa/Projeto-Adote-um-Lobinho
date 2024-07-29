@@ -64,18 +64,13 @@
    font-family: "Darker Grotesque", sans-serif;
 }
 
-.profile img {
-   height: 30vh;
-   width: 40vh;
-   box-shadow: -111px -70px 0px -14px rgba(44,86,128,1);
-}
-
 .profile {
    height: 25%;
    width: 100%;
    display: flex;
    align-items: center;
    justify-content: center;
+   font-family: "Darker Grotesque", sans-serif;
 }
 
 .desc {
@@ -121,7 +116,7 @@
    font-size: 2vh;
 }
 
-.changepage input{
+.changepage button{
    height: 50%;
    width: 15%;
    font-size: 2vh;
@@ -131,6 +126,32 @@
    cursor: pointer;
 }
 
-.changepage p{
+.actual{
    background-color: #DEB959;
+}
+
+.adotar {
+   margin-top: -10%;
+   background-color: #DEB959;
+   height: 5vh;
+   width: 15vh;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: "Darker Grotesque", sans-serif;
+   font-size: 2.5vh;
+}
+
+.adotados {
+   margin-top: -10%;
+   background-color: #7AAC3A;
+   height: 5vh;
+   width: 15vh;
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-family: "Darker Grotesque", sans-serif;
+   font-size: 2.5vh;
 }
