@@ -3,12 +3,12 @@ function getRandomNumber(max) {
  }
  
  function getTwoDifferentRandomNumbers() {
-   let num1 = getRandomNumber(101);
-   let num2 = getRandomNumber(101);
+   let num1 = getRandomNumber(1001);
+   let num2 = getRandomNumber(1001);
  
    // Garantir que os dois números sejam diferentes
    while (num1 === num2) {
-     num2 = getRandomNumber(101);
+     num2 = getRandomNumber(1001);
    }
  
    return [num1, num2];
