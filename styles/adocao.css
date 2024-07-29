@@ -14,6 +14,7 @@ main {
  h1 {
     font-family: "Darker Grotesque", sans-serif;
     font-size: 60px;
+    margin-top: -24px;
  }
  h6 {
     font-family: "Darker Grotesque", sans-serif;
