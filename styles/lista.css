@@ -64,18 +64,17 @@
    font-family: "Darker Grotesque", sans-serif;
 }
 
-.low img {
-   height: 33vh;
-   width: 45vh;
+.profile img {
+   height: 80%;
+   width: 20%;
 }
 
 .profile {
-   height: 50%;
+   height: 25%;
    width: 100%;
    display: flex;
    align-items: center;
    justify-content: center;
-   background-color: brown;
 }
 
 .desc {
