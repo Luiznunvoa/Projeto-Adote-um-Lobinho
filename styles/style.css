@@ -66,6 +66,20 @@ main {
 
 }
 
+/*Imagem*/
+
+.l {
+   height: 30vh;
+   width: 40vh;
+   box-shadow: -6.5vh -5vh 0px -1.4vh rgba(44,86,128,1);
+}
+
+.r {
+   height: 30vh;
+   width: 40vh;
+   box-shadow: 6.5vh -5vh 0px -1.4vh rgba(44,86,128,1);
+}
+
 /*Gradientzinho*/
 
 .gradient {
