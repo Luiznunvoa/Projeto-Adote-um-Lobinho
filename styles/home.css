@@ -173,12 +173,12 @@
    width: 100%;
    display: flex;
    align-items: center;
-   justify-content: space-evenly;
+   justify-content: center;
 }
 
 .desc {
    height: 60%;
-   width: 30%;
+   width: 45%;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -186,16 +186,12 @@
 }
 
 .desc h1{
+   font-size: 3vh;
    color: black;
 }
 
-.desc h5{
-   font-size: 1vh;
-   font-family: "Darker Grotesque", sans-serif;
-}
-
-.desc section{
-   margin-top: -10%;
+.desc span{
+   margin-top: -5%;
    display: flex;
    flex-direction: row;
    flex-wrap: nowrap;
@@ -210,4 +206,5 @@
    font-size: 1.5vh;
    font-family: "Darker Grotesque", sans-serif;
 }
+
 /*Fim da estilizaçao do home.html*/
