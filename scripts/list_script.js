@@ -1,112 +1,85 @@
-let orfaos
-let num1 = 1
+let orfaos;
+let num1 = 1;
 
 const fetchConfig = {
-   "method": "GET"
-}
+    "method": "GET"
+};
 
 fetch("http://localhost:8080/data/lobinhos.json", fetchConfig)
-   .then((resposta)=>{
-       resposta.json()
-           .then((resposta)=>{
-            orfaos = resposta.filter((lobos)=>{
-               return !lobos.adotado
-            })
-            console.log(orfaos)
-           })
-           .catch((error)=>{
-               console.log("error 2")
-               console.log(error)
-           })
-   })
-   .catch((error)=>{
-       console.log("error 1")
-       console.log(error)
-   })
+    .then((resposta) => resposta.json())
+    .then((dados) => {
+        orfaos = dados.filter((lobos) => !lobos.adotado);
+        console.log(orfaos);
 
+        criarPerfil(num1);
 
-function criarPerfil(numero, resposta){
-    //definindo ids
+        let lobo = orfaos[num1].nome;
+        let desc = orfaos[num1].descricao;
+        let idade = orfaos[num1].idade;
+        let imagem = orfaos[num1].imagem;
 
-    let imagem = `imagem${numero}`;
-    let nome = `nome${numero}`;
-    let idade = `idade${numero}`;
-    let desc = `desc${numero}`;
+        document.getElementById("imagem1").src = imagem;
+        document.getElementById("nome1").innerHTML = lobo;
+        document.getElementById("idade1").innerHTML = idade;
+        document.getElementById("desc1").innerHTML = desc;
+    })
+    .catch((error) => {
+        console.log("Erro ao buscar dados:", error);
+    });
+
+function criarPerfil(numero) {
+    // Definindo ids
+    let imagemId = `imagem${numero}`;
+    let nomeId = `nome${numero}`;
+    let idadeId = `idade${numero}`;
+    let descId = `desc${numero}`;
 
     // Criação da tag section de classe profile
-
     const novaperfil = document.createElement("section");
     novaperfil.classList.add('profile');
 
-    // Criação da tag img 
-
+    // Criação da tag img
     const novaimagem = document.createElement("img");
-    novaimagem.setAttribute("id",imagem)
+    novaimagem.setAttribute("id", imagemId);
 
-    // Adicionando imagem a seçao
-
+    // Adicionando imagem à seção
     novaperfil.appendChild(novaimagem);
 
     // Criação da tag div de classe desc
-
     const novadesc = document.createElement("div");
     novadesc.classList.add('desc');
 
     // Criação da tag h1
-
     const novotitulo = document.createElement("h1");
-    novotitulo.setAttribute("id", nome)
+    novotitulo.setAttribute("id", nomeId);
 
-    //Adicionando titulo a descrição
-
+    // Adicionando título à descrição
     novadesc.appendChild(novotitulo);
 
     // Criação da tag span
-
     const novospan = document.createElement("span");
 
     // Criação da tag p
-
     const novaidade = document.createElement("p");
-    novotitulo.setAttribute("id", idade)
+    novaidade.setAttribute("id", idadeId);
 
-    //Adicionando idade ao span
+    // Adicionando idade ao span
+    novospan.appendChild(novaidade);
 
-    novaidade.appendChild(novospan);
-
-
-    //Adicionando span a descrição
-
+    // Adicionando span à descrição
     novadesc.appendChild(novospan);
 
-    //Adicionando caixa de texto
-
+    // Adicionando caixa de texto
     const novacaixadetexto = document.createElement("div");
     novacaixadetexto.classList.add('textbox');
-    novaimagem.setAttribute("id", desc)
+    novacaixadetexto.setAttribute("id", descId);
 
-    //Adicionando caixa de texto a descriçao
-
+    // Adicionando caixa de texto à descrição
     novadesc.appendChild(novacaixadetexto);
 
-    //Adicionando descrição a seção
-
+    // Adicionando descrição à seção
     novaperfil.appendChild(novadesc);
 
     const section = document.getElementById("list");
     section.appendChild(novaperfil);
-
-    return
 }
-
-criarPerfil(num1);
-
-let lobo = orfaos[num1].nome;
-let desc = orfaos[num1].descricao;
-let idade = orfaos[num1].idade;
-let imagem = orfaos[num1].imagem;
-
-document.getElementById("imagem1").src = imagem;
-document.getElementById("nome1").innerHTML = lobo;
-document.getElementById("idade1").innerHTML = idade;
-document.getElementById("desc1").innerHTML = desc;
