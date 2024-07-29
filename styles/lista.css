@@ -65,8 +65,9 @@
 }
 
 .profile img {
-   height: 80%;
-   width: 20%;
+   height: 30vh;
+   width: 40vh;
+   box-shadow: -111px -70px 0px -14px rgba(44,86,128,1);
 }
 
 .profile {
@@ -106,4 +107,30 @@
    height: 50%;
    font-size: 1.5vh;
    font-family: "Darker Grotesque", sans-serif;
+}
+
+.changepage{
+   height: 10vh;
+   width: 50vh;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   justify-content: center;
+   font-family: "Darker Grotesque", sans-serif;
+   font-size: 2vh;
+}
+
+.changepage input{
+   height: 50%;
+   width: 15%;
+   font-size: 2vh;
+   background-color: white;
+   font-family: "Darker Grotesque", sans-serif;
+   border: none;
+   cursor: pointer;
+}
+
+.changepage p{
+   background-color: #DEB959;
 }
