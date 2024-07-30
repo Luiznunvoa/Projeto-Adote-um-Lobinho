@@ -4,7 +4,7 @@ let lobos; // Variável para armazenar os dados dos lobos
 const fetchConfig = { method: "GET" };
 
 // Faz a requisição para obter os dados dos lobos
-fetch("http://localhost:8080/data/lobinhos.json", fetchConfig)
+fetch("http://localhost:5500/data/lobinhos.json", fetchConfig)
     .then(res => res.json()) // Converte a resposta para JSON
     .then(dados => {
         lobos = dados; // Armazena os dados dos lobos

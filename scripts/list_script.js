@@ -1,7 +1,7 @@
 let lobos, adotados = false, loboprocurado = false, num = 0, atual = 1;
 
 // Realiza uma requisição GET para obter os dados dos lobos
-fetch("http://localhost:8080/data/lobinhos.json")
+fetch("http://localhost:5500/data/lobinhos.json")
     .then(res => res.json())  // Converte a resposta para JSON
     .then(dados => {
         lobos = dados;  // Armazena os dados dos lobos
@@ -30,7 +30,8 @@ function atualizarLobos() {
                 if (!lobo.adotado && !loboprocurado) {
                     localStorage.setItem('loboSelecionado', lobo.id);
                     console.log("Lobo selecionado ID:", lobo.id);
-                    window.location.href = "show.html";
+                    // Redireciona para a página de perfil com o ID do lobo
+                    window.location.href = `show.html?id=${lobo.id}`;
                 } else if (!loboprocurado) {
                     console.log("Este lobo já foi adotado.");
                 }
