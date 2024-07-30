@@ -27,7 +27,7 @@ function publicar() {
         }
     }
 
-    fetch("http://127.0.0.1:5500/api/lobinhos", fetchConfig) // Endpoint de exemplo
+    fetch("http://localhost:8080//api/lobinhos", fetchConfig) // Endpoint de exemplo
         .then(resposta => resposta.json())
         .then(dados => {
             console.log(dados);
@@ -48,7 +48,7 @@ function pegarDados() {
         return;
     }
   
-    fetch("http://127.0.0.1:5500/data/lobinhos.json")
+    fetch("http://localhost:8080/data/lobinhos.json")
         .then(resposta => resposta.json())
         .then(lobinhos => {
             const lobo = lobinhos.find(l => l.id == id);

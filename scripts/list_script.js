@@ -1,5 +1,6 @@
 let lobos;
 let adotados = false;
+let loboprocurado = false
 let num = 0;
 let actual = 1;
 
@@ -38,9 +39,18 @@ function atualizarLobos(status, number) {
 
             // Adicionar evento onclick para salvar no localStorage
             document.getElementById("status" + i).onclick = function() {
-                localStorage.setItem('loboSelecionado', lobosFiltrados[number + i].id);
-                console.log("Lobo selecionado ID:", lobosFiltrados[number + i].id);
-            };
+            if(!lobosFiltrados[number + i].adotado){
+                    if(!loboprocurado){
+                        localStorage.setItem('loboSelecionado', lobosFiltrados[number + i].id);
+                        console.log("Lobo selecionado ID:", lobosFiltrados[number + i].id);
+                        window.location.href="show.html";
+                    }
+                    else{
+                        window.location.href="show.html";
+                    }
+                };
+            }
+                
         } else {
             document.getElementById("imagem" + i).src = '';
             document.getElementById("nome" + i).innerHTML = '';
@@ -95,6 +105,7 @@ document.getElementById("checkbox-adotados").addEventListener("change", function
             document.getElementById("status" + i).innerHTML = "Adotar";
         }
     }
+    loboprocurado = false
     atualizarLobos(adotados, num);
 });
 
@@ -104,20 +115,35 @@ document.getElementById("search").addEventListener("keyup", function(event) {
         const loboEncontrado = lobos.find(lobo => lobo.nome.toLowerCase() === query);
 
         if (loboEncontrado) {
+            localStorage.setItem('loboSelecionado', loboEncontrado.id);
             document.getElementById("imagem0").src = loboEncontrado.imagem;
             document.getElementById("nome0").innerHTML = loboEncontrado.nome;
             document.getElementById("idade0").innerHTML = loboEncontrado.idade;
             document.getElementById("desc0").innerHTML = loboEncontrado.descricao;
+            loboprocurado = true
 
             // Esconde os outros lobos
             for (let i = 1; i < 4; i++) {
                 document.getElementById("profile" + i).setAttribute("style", "visibility: hidden;"); 
+            }
+
+            if(loboEncontrado.adotado){
+                document.getElementById("status0").innerHTML = "Adotado";
+                document.getElementById("status0").className = "adotados";
+                document.getElementById("status0").onclick = function() {
+
+                }
+            } else{ 
+                document.getElementById("status0").innerHTML = "Adotar";
+                document.getElementById("status0").className = "adotar";
+
             }
         } else {
             // Se não encontrar, limpe os campos
             for (let i = 0; i < 4; i++) {
                 document.getElementById("profile" + i).setAttribute("style", "visibility: hidden;"); 
             }
+
         }
         
     }
