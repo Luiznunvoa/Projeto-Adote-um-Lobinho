@@ -1,58 +1,45 @@
-function getRandomNumber(max) {
-   return Math.floor(Math.random() * max);
- }
- 
- function getTwoDifferentRandomNumbers() {
-   let num1 = getRandomNumber(1001);
-   let num2 = getRandomNumber(1001);
- 
-   // Garantir que os dois números sejam diferentes
-   while (num1 === num2) {
-     num2 = getRandomNumber(1001);
-   }
- 
-   return [num1, num2];
- }
- 
- const [num1, num2] = getTwoDifferentRandomNumbers();
+// Função para obter um número aleatório entre 0 e max-1
+const getRandomNumber = max => Math.floor(Math.random() * max);
 
+// Função para obter dois números aleatórios diferentes entre 0 e 1000
+const getTwoDifferentRandomNumbers = () => {
+    let num1 = getRandomNumber(1001);
+    let num2;
+    do {
+        num2 = getRandomNumber(1001);
+    } while (num1 === num2);
+    return [num1, num2];
+};
 
-const fetchConfig = {
-   "method": "GET"
-}
+// Obtém dois números aleatórios diferentes
+const [num1, num2] = getTwoDifferentRandomNumbers();
 
+// Configuração da requisição fetch
+const fetchConfig = { method: "GET" };
+
+// Requisição para obter os dados dos lobos
 fetch("http://localhost:8080/data/lobinhos.json", fetchConfig)
-   .then((resposta)=>{
-       resposta.json()
-           .then((resposta)=>{
-            let lobo1 = resposta[num1].nome;
-            let desc1 = resposta[num1].descricao;
-            let idade1 = resposta[num1].idade;
-            let imagem1 = resposta[num1].imagem;
+    .then(res => res.json())
+    .then(data => {
+        // Obtém os dados dos lobos usando os números aleatórios
+        const lobo1 = data[num1];
+        const lobo2 = data[num2];
 
-            let lobo2 = resposta[num2].nome;
-            let desc2 = resposta[num2].descricao;
-            let idade2 = resposta[num2].idade;
-            let imagem2 = resposta[num2].imagem;
+        // Atualiza os elementos da página com os dados dos lobos
+        document.getElementById("imagem1").src = lobo1.imagem;
+        document.getElementById("nome1").innerHTML = lobo1.nome;
+        document.getElementById("idade1").innerHTML = lobo1.idade;
+        document.getElementById("desc1").innerHTML = lobo1.descricao;
 
-            console.log(`Lobo 1 nome: ${lobo1}, idade: ${idade1}, descricao: ${desc1}`)
-            console.log(`Lobo 2 nome: ${lobo2}, idade: ${idade2}, descricao: ${desc2}`)
-            document.getElementById("imagem1").src = imagem1;
-            document.getElementById("nome1").innerHTML = lobo1;
-            document.getElementById("idade1").innerHTML = idade1;
-            document.getElementById("desc1").innerHTML = desc1;
-            
-            document.getElementById("imagem2").src = imagem2;
-            document.getElementById("nome2").innerHTML = lobo2;
-            document.getElementById("idade2").innerHTML = idade2;
-            document.getElementById("desc2").innerHTML = desc2;
-           })
-           .catch((error)=>{
-               console.log("error 2")
-               console.log(error)
-           })
-   })
-   .catch((error)=>{
-       console.log("error 1")
-       console.log(error)
-   })
+        document.getElementById("imagem2").src = lobo2.imagem;
+        document.getElementById("nome2").innerHTML = lobo2.nome;
+        document.getElementById("idade2").innerHTML = lobo2.idade;
+        document.getElementById("desc2").innerHTML = lobo2.descricao;
+
+        // Exibe os dados dos lobos no console
+        console.log(`Lobo 1 nome: ${lobo1.nome}, idade: ${lobo1.idade}, descrição: ${lobo1.descricao}`);
+        console.log(`Lobo 2 nome: ${lobo2.nome}, idade: ${lobo2.idade}, descrição: ${lobo2.descricao}`);
+    })
+    .catch(error => {
+        console.log("Erro ao buscar dados:", error);
+    });
