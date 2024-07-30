@@ -163,4 +163,48 @@
    font-family: "Darker Grotesque", sans-serif;
 }
 
+.low img {
+   height: 33vh;
+   width: 45vh;
+}
+
+.profile {
+   height: 50%;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.desc {
+   height: 60%;
+   width: 45%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.desc h1{
+   font-size: 3vh;
+   color: black;
+}
+
+.desc span{
+   margin-top: -5%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   align-items: center;
+   font-size: 1vh;
+   font-family: "Darker Grotesque", sans-serif;
+}
+
+.textbox {
+   width: 80%;
+   height: 50%;
+   font-size: 1.5vh;
+   font-family: "Darker Grotesque", sans-serif;
+}
+
 /*Fim da estilizaçao do home.html*/
