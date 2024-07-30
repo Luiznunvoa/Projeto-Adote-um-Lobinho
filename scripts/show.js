@@ -1,71 +1,53 @@
-function mudarDados(imagem, nome, descricao) {
-  const imagemL = document.querySelector(".lobo");
-  const nomeL = document.querySelector(".roboto-h1");
-  const descricaoL = document.querySelector(".resumo-lobo");
+let lobos;
 
-  imagemL.src = imagem;
-  nomeL.innerText = nome;
-  descricaoL.innerText = descricao;
-}
+        const fetchConfig = {
+            method: "GET"
+        };
 
-function pegarDados() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const id = urlParams.get('id');
-  
-  if (!id) {
-      alert('Nenhum ID de lobo foi fornecido na URL.');
-      return;
-  }
+        fetch("http://localhost:8080/data/lobinhos.json", fetchConfig)
+            .then((resposta) => resposta.json())
+            .then((dados) => {
+                lobos = dados;
+                atualizarImagemLobinho();
+            })
+            .catch((error) => {
+                console.log("Erro ao buscar dados:", error);
+            });
 
-  fetch("http://127.0.0.1:5500/data/lobinhos.json")
-      .then((resposta) => resposta.json())
-      .then((lobinhos) => {
-          const lobo = lobinhos.find(l => l.id == id);
-          if (lobo) {
-              mudarDados(lobo.imagem, lobo.nome, lobo.descricao);
-              
-              /* Botão de adoção*/
-              document.getElementById('adotar-button').addEventListener('click', () => {
-                  window.location.href = `adocao.html?id=${id}`;
-              });
+        function atualizarImagemLobinho() {
+            const loboId = localStorage.getItem('loboSelecionado');
 
-              /* Botão de exclusão*/
-              document.getElementById('excluir-button').addEventListener('click', () => {
-                  if (confirm('Tem certeza de que deseja excluir este lobo?')) {
-                      fetch(`http://127.0.0.1:5500/api/lobinhos/${id}`, {
-                          method: 'DELETE',
-                          headers: {
-                              'Content-Type': 'application/json'
-                          },
-                          body: JSON.stringify({ id: id })
-                      })
-                      .then(response => {
-                          if (response.ok) {
-                              alert('Lobo excluído com sucesso.');
-                              window.location.href = 'lista.html';
-                          } else {
-                              alert('Erro ao excluir o lobo.');
-                          }
-                      })
-                      .catch(error => {
-                          console.log('Erro:', error);
-                          alert('Erro ao excluir o lobo.');
-                      });
-                  }
-              });
+            if (loboId) {
+                const loboImagem = lobos[loboId - 1].imagem;
+                const loboNome = lobos[loboId - 1].nome;
+                const loboDesc = lobos[loboId - 1].descricao;
+                console.log(loboId);
+                document.getElementById("lobinho-imagem").src = loboImagem;
+                document.getElementById("lobinho-nome").innerHTML = loboNome;
+                document.getElementById("lobinho-descricao").innerHTML = loboDesc;
+            }
+        }
 
-          } else {
-              alert('Lobo não encontrado.');
-          }
-      })
-      .catch((error) => {
-          console.log(error);
-      });
-}
+        document.getElementById('adotar-button').addEventListener('click', () => {
+            const loboId = localStorage.getItem('loboSelecionado');
+            window.location.href = `adocao.html?id=${loboId}`;
+        });
 
-pegarDados();
+        document.getElementById('excluir-button').addEventListener('click', () => {
+            localStorage.removeItem('loboSelecionado');
+            const loboAtualId = document.getElementById('lobinho-nome').getAttribute('data-id');
+            const novosLobos = lobos.filter(lobo => lobo.id != loboAtualId);
 
-
-
+            if (novosLobos.length > 0) {
+                const novoLobo = novosLobos[Math.floor(Math.random() * novosLobos.length)];
+                localStorage.setItem('loboSelecionado', novoLobo.id);
+                document.getElementById("lobinho-imagem").src = novoLobo.imagem;
+                document.getElementById("lobinho-nome").innerHTML = novoLobo.nome;
+                document.getElementById("lobinho-nome").setAttribute('data-id', novoLobo.id);
+                document.getElementById("lobinho-descricao").innerHTML = novoLobo.descricao;
+            } else {
+                console.log("Não há mais lobos disponíveis.");
+            }
+        });
 
 

@@ -7,6 +7,7 @@ const fetchConfig = {
     method: "GET"
 };
 
+//fetch("http://localhost:5500/data/lobinhos.json", fetchConfig)
 fetch("http://localhost:8080/data/lobinhos.json", fetchConfig)
     .then((resposta) => resposta.json())
     .then((dados) => {
@@ -34,6 +35,12 @@ function atualizarLobos(status, number) {
             document.getElementById("nome" + i).innerHTML = lobosFiltrados[number + i].nome;
             document.getElementById("idade" + i).innerHTML = lobosFiltrados[number + i].idade;
             document.getElementById("desc" + i).innerHTML = lobosFiltrados[number + i].descricao;
+
+            // Adicionar evento onclick para salvar no localStorage
+            document.getElementById("status" + i).onclick = function() {
+                localStorage.setItem('loboSelecionado', lobosFiltrados[number + i].id);
+                console.log("Lobo selecionado ID:", lobosFiltrados[number + i].id);
+            };
         } else {
             document.getElementById("imagem" + i).src = '';
             document.getElementById("nome" + i).innerHTML = '';
