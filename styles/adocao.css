@@ -52,6 +52,12 @@ p {
     flex-direction: column;
     margin-left: 20px;
  }
+ .name {
+    display: flex;
+ }
+ .h6, .h1 {
+    margin-left: .1em;
+ }
 .dados {
     display: flex;
     justify-content: space-between
