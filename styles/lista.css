@@ -28,7 +28,9 @@
    width: 60%;
    height: 100%;
    border: solide;
+   border-width: 0.1vh;
    border-color: black;
+   font-size: 1vh;
 }
 
 .searchbutton {
@@ -44,6 +46,7 @@
 .adotado {
    height: 2vh;
    width: 2vh;
+   border-width: 0.1vh;
    margin-left: -55%;
 }
 
