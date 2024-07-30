@@ -193,9 +193,9 @@ footer img {
 }
 
 footer div img {
-   height: 19px; 
-   width: 19px;
-   margin-right: 5px;
+   height: 2vh; 
+   width: 2vh;
+   margin-right: 0.5vh;
 }
 
 footer h3{
@@ -204,7 +204,7 @@ footer h3{
    font-family: "Roboto", sans-serif;
 }
 
-footer input{
+.quem{
    height: 2vh;
    width: 10vh;
    background-color: #DEB959;
