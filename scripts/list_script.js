@@ -67,6 +67,9 @@ document.getElementById("back").onclick = function back() {
 };
 
 document.getElementById("checkbox-adotados").addEventListener("change", function() {
+    for (let i = 0; i < 4; i++) {
+        document.getElementById("profile" + i).style.visibility = "visible"; 
+    }
     adotados = this.checked;
     num = 0; // Reinicia o contador para começar do início da nova lista
     actual = 1; // Reinicia a página atual
@@ -86,4 +89,29 @@ document.getElementById("checkbox-adotados").addEventListener("change", function
         }
     }
     atualizarLobos(adotados, num);
+});
+
+document.getElementById("search").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        const query = event.target.value.toLowerCase();
+        const loboEncontrado = lobos.find(lobo => lobo.nome.toLowerCase() === query);
+
+        if (loboEncontrado) {
+            document.getElementById("imagem0").src = loboEncontrado.imagem;
+            document.getElementById("nome0").innerHTML = loboEncontrado.nome;
+            document.getElementById("idade0").innerHTML = loboEncontrado.idade;
+            document.getElementById("desc0").innerHTML = loboEncontrado.descricao;
+
+            // Esconde os outros lobos
+            for (let i = 1; i < 4; i++) {
+                document.getElementById("profile" + i).setAttribute("style", "visibility: hidden;"); 
+            }
+        } else {
+            // Se não encontrar, limpe os campos
+            for (let i = 0; i < 4; i++) {
+                document.getElementById("profile" + i).setAttribute("style", "visibility: hidden;"); 
+            }
+        }
+        
+    }
 });
