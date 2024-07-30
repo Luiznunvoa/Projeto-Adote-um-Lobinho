@@ -1,7 +1,6 @@
 /*Estilizaçao da <main>*/
 
 main {
-    width: 100vw;
     background-color: #FFFFFF;
     height: auto;
     border: 0;
@@ -100,4 +99,7 @@ input {
     border: #FFFFFF 1px solid;
     transition: all ease .2s;
     translate: -2px -2px;
+}
+.quem {
+    font-size: 1rem;
 }

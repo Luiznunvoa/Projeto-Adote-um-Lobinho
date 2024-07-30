@@ -166,9 +166,15 @@ footer {
    padding-bottom: 30px;
 }
 
+footer div {
+   display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+}
 footer iframe{
-   height: 17vh;
-   width: 25vh;
+   height: 21vh;
+   width: 32vh;
 }
 
 footer section{
@@ -186,6 +192,12 @@ footer img {
    width: 20vh;
 }
 
+footer div img {
+   height: 19px; 
+   width: 19px;
+   margin-right: 5px;
+}
+
 footer h3{
    color: white;
    font-size: 1.5vh;
@@ -201,6 +213,7 @@ footer input{
    height: auto;
    cursor: pointer;
    font-family: "Darker Grotesque", sans-serif;
+   margin-top: 9px;
 }
 
 footer input:hover{
@@ -210,3 +223,13 @@ footer input:hover{
    color: #000000c4;
 }
 
+.dados-footer {
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   margin-left: 1.9vw;
+   font-family: "Darker Grotesque", sans-serif;
+   font-size: 18px;
+   line-height: 15px;
+   width: auto;
+}
