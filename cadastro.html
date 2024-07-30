@@ -4,30 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Cadastro de Lobinho</title>
+    <link rel="stylesheet" href="styles/cadastro.css">
+    <title>Coloque um lobinho para adoção</title>
 </head>
 <body>
-    
     <header>
-        <div>
-            <a href="lista.html" class="a">Nossos Lobinhos</a>  
-            <div class="linha1"></div>
-        </div>
-        <img src="assets/logo.jpg"/>
-        <div class="sobre">
-            <a href="sobre-nos.html" class="a2">Quem Somos</a>
-            <div class="linha2"></div>
-        </div>
-        
+        <a href="lista.html">Nossos Lobinhos</a>
+        <a href="home.html"><img src="assets/logo.jpg"/></a>
+        <a href="cadastro.html">Quem Somos</a>
     </header>
     <main>
-
+        <section class="middle">
+            <div class="form-container">
+                <h2>Coloque um lobinho para adoção</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nome">Nome do Lobinho:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="idade">Idade do Lobinho:</label>
+                        <input type="number" id="idade" name="idade" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="foto">Link da Foto:</label>
+                        <input type="url" id="foto" name="foto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Descrição:</label>
+                        <textarea id="descricao" name="descricao" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
     <footer>
-
+        <iframe width="360" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=720&amp;height=600&amp;hl=en&amp;q=Universidade%20federal%20fluminense%20instituto%20de%20computa%C3%A7%C3%A3o+(Injunior)&amp;t=&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+        <section>
+            <h3>Av. Milton Tavares de Souza, s/n - Sala 115 B - Boa<br> Viagem, Niterói - RJ, 24210-315</h3>
+            <h3>(99) 99999-9999</h3>
+            <h3>lobos@lobINhos.com</h3>
+            <input type="button" value="Quem Somos"/> 
+        </section>
+        <img src="assets/desenvolvido_com.png"/>
     </footer>
-    
-    <link rel="stylesheet" href="script.js">
-    
+    <script type="module" src="scripts/script.js"></script>
 </body>
 </html>
+
