@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        fetch("http://127.0.0.1:5500/data/lobinhos.json")
+        fetch("http://localhost:8080/data/lobinhos.json")
             .then((resposta) => resposta.json())
             .then((lobinhos) => {
                 const lobo = lobinhos.find(l => l.id == id);
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             emailDono: email
         };
 
-        fetch('http://127.0.0.1:5500/api/lobinhos', {
+        fetch('"http://localhost:8080/data/lobinhos.json', {
             method: 'POST', // Usando POST para criar um novo recurso
             headers: {
                 'Content-Type': 'application/json'
